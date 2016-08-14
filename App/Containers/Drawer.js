@@ -4,6 +4,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Text,
+  Platform,
 } from 'react-native'
 
 import BaseDrawer from 'react-native-drawer'
@@ -53,7 +54,7 @@ class DrawerContentLink extends Component {
 }
 
 
-const DrawerContent = ({}) => {
+const DrawerContent = (props) => {
   return (
     <ScrollView style={styles.content}>
       <DrawerContentLink scene="movies" title="Trending Movies" icon="film"/>
@@ -116,12 +117,12 @@ const styles = StyleSheet.create({
     fontSize: DRAWER_LINK_SIZE,
   },
   hamburger: {
-    marginTop: 20,
+    marginTop: (Platform.OS == 'ios' ? 20 : 0),
     width: 54,
-    height: 44,
+    height: (Platform.OS == 'ios' ? 44 : 54),
   },
   hamburgerIcon: {
-    marginTop: 10,
+    marginTop: (Platform.OS == 'ios' ? 10 : 14),
     marginLeft: 15,
     width: 25,
   },
