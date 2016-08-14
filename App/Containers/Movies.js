@@ -22,10 +22,8 @@ class Movies extends Component {
       movies: [],
     }
 
-    console.log("asking for movies")
     trakt.getMovies()
     .then((movies) => {
-      console.log("received movies")
       this.setState({
         loading: false,
         movies,
@@ -40,7 +38,6 @@ class Movies extends Component {
   }
 
   render() {
-    console.log("rendering")
     return (
       <View style={styles.container}>
         <MovieListView movies={this.state.movies} onSelectMovie={this._selectMovie}/>
