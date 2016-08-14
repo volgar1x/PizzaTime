@@ -1,0 +1,230 @@
+exports[`test Movies renders correctly 1`] = `
+<Image
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function bound touchableHandleResponderGrant]}
+  onResponderMove={[Function bound touchableHandleResponderMove]}
+  onResponderRelease={[Function bound touchableHandleResponderRelease]}
+  onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
+  onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
+  onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+  source={
+    Object {
+      "uri": "https://walter.trakt.us/images/movies/000/187/173/posters/thumb/2b19d6ec1f.jpg"
+    }
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "borderRadius": 5,
+      "height": 150,
+      "justifyContent": "flex-end",
+      "margin": 10,
+      "padding": 5,
+      "width": 100
+    }
+  }
+  testID={undefined}>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "backgroundColor": "rgba(0,0,0,0)"
+      }
+    }>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between"
+        }
+      }>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function bound touchableHandleResponderGrant]}
+        onResponderMove={[Function bound touchableHandleResponderMove]}
+        onResponderRelease={[Function bound touchableHandleResponderRelease]}
+        onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
+        onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
+        onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+        style={
+          Object {
+            "opacity": 1
+          }
+        }
+        testID={undefined}>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#F9D53B",
+                "fontFamily": "FontAwesome",
+                "fontSize": 11,
+                "fontStyle": "normal",
+                "fontWeight": "normal"
+              },
+              undefined
+            ]
+          }>
+          
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function bound touchableHandleResponderGrant]}
+        onResponderMove={[Function bound touchableHandleResponderMove]}
+        onResponderRelease={[Function bound touchableHandleResponderRelease]}
+        onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
+        onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
+        onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+        style={
+          Object {
+            "opacity": 1
+          }
+        }
+        testID={undefined}>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#F9D53B",
+                "fontFamily": "FontAwesome",
+                "fontSize": 11,
+                "fontStyle": "normal",
+                "fontWeight": "normal"
+              },
+              undefined
+            ]
+          }>
+          
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function bound touchableHandleResponderGrant]}
+        onResponderMove={[Function bound touchableHandleResponderMove]}
+        onResponderRelease={[Function bound touchableHandleResponderRelease]}
+        onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
+        onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
+        onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+        style={
+          Object {
+            "opacity": 1
+          }
+        }
+        testID={undefined}>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#F9D53B",
+                "fontFamily": "FontAwesome",
+                "fontSize": 11,
+                "fontStyle": "normal",
+                "fontWeight": "normal"
+              },
+              undefined
+            ]
+          }>
+          
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function bound touchableHandleResponderGrant]}
+        onResponderMove={[Function bound touchableHandleResponderMove]}
+        onResponderRelease={[Function bound touchableHandleResponderRelease]}
+        onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
+        onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
+        onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+        style={
+          Object {
+            "opacity": 1
+          }
+        }
+        testID={undefined}>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#F9D53B",
+                "fontFamily": "FontAwesome",
+                "fontSize": 11,
+                "fontStyle": "normal",
+                "fontWeight": "normal"
+              },
+              undefined
+            ]
+          }>
+          
+        </Text>
+      </View>
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={true}
+        hitSlop={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function bound touchableHandleResponderGrant]}
+        onResponderMove={[Function bound touchableHandleResponderMove]}
+        onResponderRelease={[Function bound touchableHandleResponderRelease]}
+        onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
+        onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
+        onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+        style={
+          Object {
+            "opacity": 1
+          }
+        }
+        testID={undefined}>
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "gray",
+                "fontFamily": "FontAwesome",
+                "fontSize": 11,
+                "fontStyle": "normal",
+                "fontWeight": "normal"
+              },
+              undefined
+            ]
+          }>
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</Image>
+`;
