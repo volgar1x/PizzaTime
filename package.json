@@ -25,6 +25,7 @@
     "react-test-renderer": "^15.3.0"
   },
   "jest": {
-    "preset": "jest-react-native"
+    "preset": "jest-react-native",
+    "collectCoverage": true
   }
 }

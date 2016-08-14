@@ -42,3 +42,4 @@ android/keystores/debug.keystore
 
 # PizzaTime
 /trakt.json
+/coverage
