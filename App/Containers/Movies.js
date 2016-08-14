@@ -49,7 +49,7 @@ class Movies extends Component {
   }
 
   _selectMovie = (movie) => {
-    Actions.movie(movie)
+    Actions.movie({movie, title: movie.title})
   }
 }
 
