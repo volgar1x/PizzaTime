@@ -1,4 +1,4 @@
-PizzaTime
+PizzaTime [![Build Status](https://travis-ci.org/Blackrush/PizzaTime.svg?branch=master)](https://travis-ci.org/Blackrush/PizzaTime)
 =========
 
 ## Screenshots
