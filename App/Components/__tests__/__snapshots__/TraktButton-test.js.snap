@@ -1,0 +1,42 @@
+exports[`test TraktButton renders correctly 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  hitSlop={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function bound touchableHandleResponderGrant]}
+  onResponderMove={[Function bound touchableHandleResponderMove]}
+  onResponderRelease={[Function bound touchableHandleResponderRelease]}
+  onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
+  onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
+  onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent"
+      },
+      Object {
+        "backgroundColor": "#ed1c24",
+        "borderColor": "#de1219",
+        "borderWidth": 1,
+        "paddingBottom": 10,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 10
+      }
+    ]
+  }
+  testID={undefined}>
+  <Text
+    style={
+      Object {
+        "color": "#fff",
+        "fontFamily": "PingFangTC-Regular"
+      }
+    }>
+    LOGIN WITH TRAKT.TV
+  </Text>
+</View>
+`;

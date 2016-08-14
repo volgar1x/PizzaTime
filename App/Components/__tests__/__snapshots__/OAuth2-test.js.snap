@@ -1,0 +1,17 @@
+exports[`test OAuth2.Login renders correctly 1`] = `
+<WebView
+  domStorageEnabled={true}
+  javaScriptEnabled={true}
+  onShouldStartLoadWithRequest={[Function bound ]}
+  source={
+    Object {
+      "uri": "mock"
+    }
+  }
+  startInLoadingState={true}
+  style={
+    Object {
+      "marginTop": 64
+    }
+  } />
+`;

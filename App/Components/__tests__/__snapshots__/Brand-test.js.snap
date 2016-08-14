@@ -1,0 +1,58 @@
+exports[`test Brand renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center"
+      },
+      undefined
+    ]
+  }>
+  <Image
+    resizeMode="stretch"
+    source={1}
+    style={
+      Object {
+        "height": 90,
+        "width": 90
+      }
+    } />
+  <View
+    style={
+      Object {
+        "flexDirection": "row"
+      }
+    }>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "GillSans-Light",
+            "fontSize": 36,
+            "textAlign": "center"
+          },
+          Object {
+            "color": "#D33E1A"
+          }
+        ]
+      }>
+      Pizza
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "GillSans-Light",
+            "fontSize": 36,
+            "textAlign": "center"
+          },
+          Object {
+            "color": "#F6BA57"
+          }
+        ]
+      }>
+      Time
+    </Text>
+  </View>
+</View>
+`;

@@ -1,0 +1,23 @@
+exports[`test Input renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "#8D8D92",
+      "borderBottomWidth": 0.5,
+      "flex": 1,
+      "flexDirection": "row",
+      "margin": 3,
+      "paddingLeft": 10,
+      "paddingRight": 10
+    }
+  }>
+  <TextInput
+    style={
+      Object {
+        "flex": 1,
+        "height": 39
+      }
+    }
+    value="test" />
+</View>
+`;
