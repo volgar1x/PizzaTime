@@ -15,6 +15,17 @@ const PARALLAX_HEIGHT = 450
 
 
 class MovieView extends Component {
+  static propTypes = {
+    overview: React.PropTypes.string,
+    rating: React.PropTypes.number,
+    style: React.PropTypes.any,
+    images: React.PropTypes.shape({
+      poster: React.PropTypes.shape({
+        full: React.PropTypes.string,
+      }),
+    }),
+  }
+
   _renderPoster = () => {
     const window = Dimensions.get('window')
 
@@ -28,7 +39,7 @@ class MovieView extends Component {
     return (
       <ParallaxScrollView parallaxHeaderHeight={PARALLAX_HEIGHT}
                           renderBackground={this._renderPoster}
-                          style={styles.container}>
+                          style={this.props.style}>
         <Text style={styles.overview}>
           {this.props.overview}
         </Text>
@@ -43,9 +54,6 @@ class MovieView extends Component {
 
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 64,
-  },
   overview: {
     padding: 10,
     textAlign: 'justify',

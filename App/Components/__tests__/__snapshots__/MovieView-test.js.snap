@@ -2,11 +2,7 @@ exports[`test Movies renders correctly 1`] = `
 <ParallaxScrollView
   parallaxHeaderHeight={450}
   renderBackground={[Function anonymous]}
-  style={
-    Object {
-      "marginTop": 64
-    }
-  }>
+  style={undefined}>
   <Text
     style={
       Object {

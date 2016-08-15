@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { StyleSheet } from 'react-native'
 
 import MovieView from '../Components/MovieView'
+import { Sizes } from '../Theme'
 
 
 class Movie extends Component {
@@ -10,10 +12,17 @@ class Movie extends Component {
 
   render() {
     return (
-      <MovieView {...this.props.movie} />
+      <MovieView {...this.props.movie} style={styles.container} />
     )
   }
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: Sizes.navBar,
+  },
+})
 
 
 export default Movie

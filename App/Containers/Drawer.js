@@ -11,6 +11,8 @@ import BaseDrawer from 'react-native-drawer'
 import { DefaultRenderer, Actions } from 'react-native-router-flux'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
+import { NativeSizes } from '../Theme/Native'
+
 
 export const HamburgerIcon = () => {
   return (
@@ -91,6 +93,7 @@ export class Drawer extends Component {
 }
 
 const DRAWER_LINK_SIZE = 22
+const HAMBURGER_SIZE = 25
 
 const styles = StyleSheet.create({
   content: {
@@ -117,13 +120,13 @@ const styles = StyleSheet.create({
     fontSize: DRAWER_LINK_SIZE,
   },
   hamburger: {
-    marginTop: (Platform.OS == 'ios' ? 20 : 0),
-    width: 54,
-    height: (Platform.OS == 'ios' ? 44 : 54),
+    marginTop: NativeSizes.statusBar,
+    width: HAMBURGER_SIZE / 1.6667 * 2 + HAMBURGER_SIZE,
+    height: NativeSizes.navBar,
   },
   hamburgerIcon: {
-    marginTop: (Platform.OS == 'ios' ? 10 : 14),
-    marginLeft: 15,
-    width: 25,
+    marginTop: (NativeSizes.navBar - HAMBURGER_SIZE) / 2,
+    marginLeft: HAMBURGER_SIZE / 1.6667,
+    width: HAMBURGER_SIZE,
   },
 })

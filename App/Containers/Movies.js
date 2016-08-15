@@ -8,6 +8,7 @@ import { Actions } from 'react-native-router-flux'
 import TraktService from '../Services/Trakt'
 
 import MovieListView from '../Components/MovieListView'
+import {Sizes} from '../Theme'
 
 
 class Movies extends Component {
@@ -53,7 +54,7 @@ class Movies extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 64,
+    marginTop: Sizes.navBar,
   },
 })
 
