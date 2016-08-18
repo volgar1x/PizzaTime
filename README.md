@@ -6,3 +6,4 @@ PizzaTime [![Build Status](https://travis-ci.org/Blackrush/PizzaTime.svg?branch=
 |iOS                      |Android                          |
 --------------------------|----------------------------------
 |![iOS](/examples/ios.png)|![Android](/examples/android.png)|
+|![iOS](/examples/ios-calendar.png)||

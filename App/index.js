@@ -4,6 +4,7 @@ import {
 import { Scene, Router, ActionConst } from 'react-native-router-flux'
 
 import { Drawer, HamburgerIcon } from './Containers/Drawer'
+import Calendar from './Containers/Calendar'
 import Movies from './Containers/Movies'
 import Movie from './Containers/Movie'
 import Login from './Containers/Login'
@@ -20,7 +21,9 @@ class App extends Component {
       <Router>
         <Scene key="drawer" component={Drawer}>
           <Scene key="root">
-            <Scene initial key="movies" component={Movies} title="Movies" {...main}/>
+            <Scene key="calendar" component={Calendar} title="Calendar" {...main}/>
+
+            <Scene key="movies" component={Movies} title="Movies" {...main}/>
             <Scene key="login" component={Login} title="Login" {...main}/>
 
             <Scene key="movie" component={Movie}/>

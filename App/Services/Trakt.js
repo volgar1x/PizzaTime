@@ -22,18 +22,53 @@ class TraktService {
   }
 
   async getMovies(type = 'trending', page = 1, limit = 20) {
-    const params = qs.stringify({
+    const resp = await this._api.get(`/movies/${type}`, {
       extended: 'full,images',
       page,
-      limit
+      limit,
     })
 
-    const resp = await this._api.get(`/movies/${type}?${params}`)
     if (!resp.ok) {
       throw new Error(`there was a problem calling api.trakt.tv, error ${resp.status}`)
     }
 
     return resp.data
+  }
+
+  async getMyShowsCalendar(start_date, days) {
+    const auth = await this.isLogged()
+
+    if (!auth) {
+      throw new Error("please authenticate yourself first")
+    }
+
+    const {ok, data: episodes} = await this._api.get(`/calendars/my/shows/${start_date}/${days}`,
+      {extended: 'full,images'},
+      {headers: {'Authorization': `Bearer ${auth.access_token}`}})
+
+    if (!ok) {
+      throw new Error("cannot retrieve my calendar")
+    }
+
+    // compute view status for each received episode
+    return Promise.all(episodes.map((episode) => {
+      return this.hasUserViewed(episode.episode.ids.trakt)
+      .then((viewed) => {
+        episode.viewed = viewed
+
+        return episode
+      })
+    }))
+  }
+
+  async hasUserViewed(id, type = 'episodes') {
+    const auth = await this.isLogged()
+
+    const {data} = await this._api.get(`/users/me/history/${type}/${id}`,
+      {},
+      {headers: {'Authorization': `Bearer ${auth.access_token}`}})
+
+    return !!data.length
   }
 
   get authorizeUri() {

@@ -59,6 +59,7 @@ class DrawerContentLink extends Component {
 const DrawerContent = (props) => {
   return (
     <ScrollView style={styles.content}>
+      <DrawerContentLink scene="calendar" title="Calendar" icon="calendar"/>
       <DrawerContentLink scene="movies" title="Trending Movies" icon="film"/>
       <DrawerContentLink scene="login" title="Login" icon="sign-in"/>
     </ScrollView>
