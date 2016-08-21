@@ -71,6 +71,17 @@ class TraktService {
     return !!data.length
   }
 
+  async checkin(item) {
+    const auth = await this.isLogged()
+
+    const resp = await this._api.post(`/checkin`, item,
+      {headers: {'Authorization': `Bearer ${auth.access_token}`}})
+
+    if (!resp.ok) {
+        throw new Error(JSON.stringify(resp))
+    }
+  }
+
   get authorizeUri() {
     return 'https://api.trakt.tv/oauth/authorize?' + qs.stringify({
       response_type: 'code',

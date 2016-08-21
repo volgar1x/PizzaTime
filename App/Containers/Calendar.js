@@ -22,18 +22,21 @@ const Button = ({label, onPress}) => (
 )
 
 
-function formatDate(first_aired: moment.Moment, start_date, days) {
-  // const end_date = start_date.clone().add(days, 'days')
-  //
-  // if (end_date.diff(start_date, 'weeks', true) < 1) {
-  //   return 'dddd [at] LT'
-  // } else if (end_date.diff(start_date, 'months', true) < 1) {
-  //   return 'dddd DD [at] LT'
-  // }
-  //
-  // return 'MMMM Do [at] LT'
+function cloneDataSource(dataSource, episodes) {
+  const groupedEpisodes = {}
+  const sectionIdentities = []
+  for (const episode of episodes) {
+    const first_aired = moment(episode.first_aired).fromNow()
 
-  return first_aired.fromNow()
+    if (groupedEpisodes[first_aired]) {
+      groupedEpisodes[first_aired].push(episode)
+    } else {
+      sectionIdentities.push(first_aired)
+      groupedEpisodes[first_aired] = [episode]
+    }
+  }
+
+  return dataSource.cloneWithRowsAndSections(groupedEpisodes, sectionIdentities.reverse())
 }
 
 
@@ -46,42 +49,19 @@ class Calendar extends React.Component {
 
     this.state = {
       refreshing: true,
-      episodes: new ListView.DataSource({
-        rowHasChanged(a, b) {
-          return a !== b
-        },
-        sectionHeaderHasChanged(a, b) {
-          return a !== b
-        },
-      }),
+      episodes: [],
     }
   }
 
   loadData(start_date, days) {
-    console.log(`loading... ${start_date.format()},${days}`)
-
     this._start_date = start_date
     this._days = days
 
     return this._api.getMyShowsCalendar(this._start_date.format(), this._days)
     .then((episodes) => {
-      const groupedEpisodes = {}
-      const sectionIdentities = []
-      for (const episode of episodes) {
-        const first_aired = moment(episode.first_aired)
-        const first_aired_human = formatDate(first_aired, start_date, days)
-
-        if (groupedEpisodes[first_aired_human]) {
-          groupedEpisodes[first_aired_human].push(episode)
-        } else {
-          sectionIdentities.push(first_aired_human)
-          groupedEpisodes[first_aired_human] = [episode]
-        }
-      }
-
       this.setState({
         refreshing: false,
-        episodes: this.state.episodes.cloneWithRowsAndSections(groupedEpisodes, sectionIdentities.reverse()),
+        episodes: episodes,
       })
     })
   }
@@ -91,8 +71,17 @@ class Calendar extends React.Component {
   }
 
   render() {
+    const dataSource = new ListView.DataSource({
+      rowHasChanged(a, b) {
+        return a !== b
+      },
+      sectionHeaderHasChanged(a, b) {
+        return a !== b
+      },
+    })
+
     return (
-      <ListView dataSource={this.state.episodes}
+      <ListView dataSource={cloneDataSource(dataSource, this.state.episodes)}
                 renderRow={this._renderRow}
                 renderSectionHeader={this._renderSectionHeader}
                 style={styles.container}
@@ -108,7 +97,7 @@ class Calendar extends React.Component {
   }
 
   _renderRow = (episode) => {
-    return <EpisodeView trakt={this._api} {...episode}/>
+    return <EpisodeView {...episode} onCheckin={() => this.checkin(episode)}/>
   }
 
   _renderSectionHeader = (section, sectionID) => {
@@ -120,9 +109,22 @@ class Calendar extends React.Component {
   }
 
   _onRefresh = () => {
-    console.log('request refresh')
     this.setState({refreshing: true})
     this.loadData(this._start_date, this._days + 7)
+  }
+
+  async checkin(episode) {
+    await this._api.checkin(episode)
+
+    for (const x of this.state.episodes) {
+      if (x.episode.ids.trakt === episode.episode.ids.trakt) {
+        x.viewed = true
+      }
+    }
+
+    this.setState({
+      episodes: this.state.episodes,
+    })
   }
 }
 

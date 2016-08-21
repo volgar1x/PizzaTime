@@ -1,3 +1,5 @@
+/** @flow */
+
 import React, { Component } from 'react'
 import {
   StyleSheet,
@@ -10,14 +12,16 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Sizes } from '../Theme'
+import Swipeout from 'react-native-swipeout'
 
 
 class EpisodeView extends Component {
   static propTypes = {
-    trakt: React.PropTypes.object.isRequired,
     episode: React.PropTypes.object.isRequired,
     show: React.PropTypes.object.isRequired,
     viewed: React.PropTypes.bool,
+
+    onCheckin: React.PropTypes.func.isRequired,
   }
 
   state = {
@@ -25,14 +29,9 @@ class EpisodeView extends Component {
   }
 
   render() {
-    const {show: {images: {fanart}}} = this.props
-
-    return (
-      <Image source={{uri: fanart.full}} style={styles.episode} resizeMode="cover" activeOpacity={.6}>
-        {this.props.viewed && this.renderViewed()}
-        {!this.props.viewed && this.renderDefault()}
-      </Image>
-    )
+    return this.props.viewed
+      ? this.renderViewed()
+      : this.renderDefault()
   }
 
   renderViewed() {
@@ -58,26 +57,36 @@ class EpisodeView extends Component {
     }
 
     return (
-      <TouchableOpacity onPress={this._onPress} style={{flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', justifyContent: 'center', alignItems: 'center'}}>
-        {body}
-      </TouchableOpacity>
+      <Image source={{uri: show.images.fanart.full}} style={styles.episode} resizeMode="cover" activeOpacity={.6}>
+        <TouchableOpacity onPress={this._onPress} style={{flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', justifyContent: 'center', alignItems: 'center'}}>
+          {body}
+        </TouchableOpacity>
+      </Image>
     )
   }
 
   renderDefault() {
-    const {episode, show} = this.props
+    const {show, episode} = this.props
+
+    const buttons = [
+      {text: 'Watched', backgroundColor: '#c61017', onPress: this.props.onCheckin},
+    ]
 
     return (
-      <View style={styles.textContainer}>
-        <Text style={styles.showText}>
-          {show.title}
-        </Text>
+      <Swipeout autoClose right={buttons} style={styles.episode}>
+        <Image source={{uri: show.images.fanart.full}} style={styles.episode} resizeMode="cover" activeOpacity={.6}>
+          <View style={styles.textContainer}>
+            <Text style={styles.showText}>
+              {show.title}
+            </Text>
 
-        <Text style={styles.dateText}>
-          S{episode.season}E{episode.number}{' '}
-          {episode.title}
-        </Text>
-      </View>
+            <Text style={styles.dateText}>
+              S{episode.season}E{episode.number}{' '}
+              {episode.title}
+            </Text>
+          </View>
+        </Image>
+      </Swipeout>
     )
   }
 
