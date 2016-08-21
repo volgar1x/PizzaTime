@@ -97,14 +97,14 @@ const HAMBURGER_SIZE = 25
 
 const styles = StyleSheet.create({
   content: {
-    paddingTop: 50,
+    paddingTop: 80,
   },
   drawerLink: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingLeft: 20,
-    marginBottom: 10,
+    paddingLeft: 30,
+    marginBottom: 30,
   },
   drawerLinkActive: {
     borderLeftColor: '#0680FF',
@@ -118,6 +118,8 @@ const styles = StyleSheet.create({
   drawerLinkText: {
     marginLeft: 20,
     fontSize: DRAWER_LINK_SIZE,
+    fontWeight: '600',
+    fontFamily: 'Gill Sans',
   },
   hamburger: {
     marginTop: NativeSizes.statusBar,
